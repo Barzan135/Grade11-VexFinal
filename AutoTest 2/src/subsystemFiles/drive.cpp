@@ -15,7 +15,7 @@ void reset_Drive_Encoders() {
   driveLeftFront.tare_position();
   driveRightFront.tare_position();
 
-  // reset shaft encoder
+  // reset shaft encoderr
   encoder1.reset();
   encoder1.reset();
 }
@@ -29,7 +29,7 @@ double avgDriveEncoder(){
 void setDriveMotors() {
   int leftJoystick = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
   int rightJoystick = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y);
-  setDrive(leftJoystick, rightJoystick);
+  setDrive(leftJoystick / 1.3, rightJoystick / 1.3);
 }
 
 // AUTO PILOT
@@ -50,3 +50,29 @@ void translate(int units, int voltage){
  setDrive(0,0);
 }
 
+
+void turnRight(int turn, int voltage){
+  reset_Drive_Encoders();
+  while(avgDriveEncoder() < abs(turn)) {
+    setDrive(voltage, -voltage);
+    pros::delay(10);
+  }
+  setDrive(0,0);
+}
+
+void turnLeft(int turn, int voltage){
+  reset_Drive_Encoders();
+  while(avgDriveEncoder() < abs(turn)){
+    setDrive(-voltage, voltage);
+    pros::delay(10);
+  }
+  setDrive(0,0);
+}
+
+void GoToWall(int voltage){
+  reset_Drive_Encoders();
+  while(avgDriveEncoder() > 1){
+    reset_Drive_Encoders();
+    setDrive(voltage, voltage);
+  }
+}

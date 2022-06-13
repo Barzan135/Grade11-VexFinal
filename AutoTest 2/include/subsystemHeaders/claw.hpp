@@ -7,4 +7,8 @@ void armControl(int power);
 
 void setClawArmMotor();
 
+
 void clawButtonControls();
+
+void translateArmMotor(int units, int power);
+void resetArmEncoder();

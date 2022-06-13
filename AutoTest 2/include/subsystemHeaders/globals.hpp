@@ -1,9 +1,8 @@
 #include "main.h"
 
 // MOTORS
-extern pros::Motor lift;
-extern pros::Motor lift2;
 extern pros::Motor clawArm;
+extern pros::Motor clawArm2;
 extern pros::Motor clawHand;
 extern pros::Motor driveLeftBack;
 extern pros::Motor driveLeftFront;

@@ -21,8 +21,7 @@ void initialize() {
 	driveLeftFront.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
 	driveRightFront.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
 
-	lift.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
-	lift2.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
+	clawArm2.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
 	clawArm.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
 	clawHand.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
 }

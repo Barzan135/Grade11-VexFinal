@@ -75,10 +75,10 @@ void opcontrol(void);
 #include "subsystemHeaders/drive.hpp"
 #include "subsystemHeaders/globals.hpp"
 #include "subsystemHeaders/claw.hpp"
-#include "subsystemHeaders/lift.hpp"
 #include "pros/apix.h"
 #include "autoSelect/selection.h"
 #include "subsystemHeaders/clawhand.hpp"
+
 //#include <iostream>
 #endif
 
